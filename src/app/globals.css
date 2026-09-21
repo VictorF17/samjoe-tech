@@ -39,7 +39,7 @@ body { margin: 0; background: var(--background); color: var(--foreground); }
 
 /* Continuous tonal transitions between the page sections. */
 .samjoe-site > section:nth-of-type(2) {
-  background: linear-gradient(180deg, #211b17 0%, #29231f 18%, #302822 72%, #27211d 100%) !important;
+  background: linear-gradient(180deg, #181514 0%, #29231f 18%, #302822 72%, #27211d 100%) !important;
   border-color: transparent !important;
 }
 
@@ -54,4 +54,11 @@ body { margin: 0; background: var(--background); color: var(--foreground); }
 .samjoe-site > footer {
   background: linear-gradient(180deg, #211b17, #181514);
   border-color: transparent !important;
+}
+
+.samjoe-site > section,
+.samjoe-site > footer,
+.samjoe-site > section:first-child > header {
+  border-top-width: 0 !important;
+  border-bottom-width: 0 !important;
 }
