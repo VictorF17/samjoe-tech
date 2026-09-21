@@ -32,6 +32,9 @@ export default function HomePage() {
         <div className="absolute -right-6 top-40 -z-10 size-[23rem] rounded-full border border-[#5eead4]/10 sm:size-[33rem]" />
         <div className="absolute left-[44%] top-0 -z-10 h-full w-px bg-linear-to-b from-transparent via-[#8ee7d0]/30 to-transparent" />
 
+        <video className="hero-video absolute inset-0 -z-10 size-full object-cover" autoPlay muted loop playsInline preload="metadata" aria-hidden="true">
+          <source src="/media/samjoe-motion.mp4" type="video/mp4" />
+        </video>
         <header className="mx-auto flex max-w-7xl items-center justify-between border-b border-white/10 pb-5">
           <a href="#início" className="flex items-center gap-2.5" aria-label="SamJoE Tech & Consulting — início">
             <span className="grid size-9 place-items-center rounded-lg bg-[#38d9a9] text-sm font-black text-[#07111d]">S</span>
@@ -40,12 +43,12 @@ export default function HomePage() {
           <nav className="hidden items-center gap-7 text-sm text-[#b7cfdb] md:flex">
             <a href="#atuação" className="transition hover:text-[#5eead4]">Atuação</a>
             <a href="#método" className="transition hover:text-[#5eead4]">Método</a>
-            <a href="#contato" className="transition hover:text-[#5eead4]">Contato</a>
+            <a href="/contato" className="transition hover:text-[#5eead4]">Contato</a>
           </nav>
-          <a href="#contato" className="inline-flex items-center gap-2 rounded-full border border-[#5eead4]/40 bg-[#5eead4]/10 px-4 py-2.5 text-xs font-bold text-[#dffef5] transition hover:bg-[#5eead4] hover:text-[#07111d]">Vamos conversar <ArrowUpRight className="size-4" /></a>
+          <a href="/contato" className="inline-flex items-center gap-2 rounded-full border border-[#5eead4]/40 bg-[#5eead4]/10 px-4 py-2.5 text-xs font-bold text-[#dffef5] transition hover:bg-[#5eead4] hover:text-[#07111d]">Vamos conversar <ArrowUpRight className="size-4" /></a>
         </header>
 
-        <div className="mx-auto grid max-w-7xl gap-12 pb-6 pt-20 lg:grid-cols-[1.08fr_.92fr] lg:items-end lg:pt-28">
+        <div className="hero-content mx-auto grid max-w-7xl gap-12 pb-6 pt-20 lg:grid-cols-[1.08fr_.92fr] lg:items-end lg:pt-28">
           <div className="max-w-3xl">
             <p className="mb-6 text-xs font-bold tracking-[0.22em] text-[#5eead4] uppercase">Tecnologia com direção</p>
             <h1 className="text-5xl font-semibold leading-[.96] tracking-[-0.065em] sm:text-7xl lg:text-[5.5rem]">Transformamos complexidade em <span className="text-[#5eead4]">movimento.</span></h1>
@@ -56,10 +59,15 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="relative mx-auto w-full max-w-xl lg:max-w-none">
+          <div className="hero-motion-panel relative mx-auto w-full max-w-xl lg:max-w-none">
             <div className="absolute -inset-6 rounded-[2.5rem] bg-[#38d9a9]/10 blur-3xl" />
             <div className="relative overflow-hidden rounded-3xl border border-white/12 bg-[#0a1b2a]/80 p-6 shadow-2xl shadow-[#020810]/45 backdrop-blur sm:p-8">
               <div className="flex items-center justify-between border-b border-white/10 pb-5"><span className="text-xs font-bold tracking-[.16em] text-[#8fb5c7] uppercase">Systems / in motion</span><span className="flex size-2 rounded-full bg-[#38d9a9] shadow-[0_0_15px_#38d9a9]" /></div>
+              <div className="motion-video mt-6 aspect-video overflow-hidden rounded-2xl">
+                <video className="size-full object-cover" autoPlay muted loop playsInline preload="metadata" aria-label="Animação de tecnologia em movimento">
+                  <source src="/media/samjoe-motion.mp4" type="video/mp4" />
+                </video>
+              </div>
               <div className="relative min-h-72 py-8 sm:min-h-80">
                 <div className="absolute left-[9%] top-[25%] size-16 rounded-2xl border border-[#5eead4]/50 bg-[#38d9a9]/10" />
                 <div className="absolute right-[12%] top-[12%] size-24 rounded-full border border-[#74b3d0]/35" />
