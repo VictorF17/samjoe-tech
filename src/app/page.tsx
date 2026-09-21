@@ -32,7 +32,7 @@ export default function HomePage() {
         <div className="absolute -right-6 top-40 -z-10 size-[23rem] rounded-full border border-[#5eead4]/10 sm:size-[33rem]" />
         <div className="absolute left-[44%] top-0 -z-10 h-full w-px bg-linear-to-b from-transparent via-[#8ee7d0]/30 to-transparent" />
 
-        <video className="hero-video absolute inset-0 -z-10 size-full object-cover" autoPlay muted loop playsInline preload="metadata" aria-hidden="true">
+        <video className="hero-video absolute inset-0 -z-10 size-full object-cover" autoPlay muted loop playsInline preload="auto" aria-hidden="true">
           <source src="/media/samjoe-motion.mp4" type="video/mp4" />
         </video>
         <header className="mx-auto flex max-w-7xl items-center justify-between border-b border-white/10 pb-5">
@@ -51,7 +51,10 @@ export default function HomePage() {
         <div className="hero-content mx-auto grid max-w-7xl gap-12 pb-6 pt-20 lg:grid-cols-[1.08fr_.92fr] lg:items-end lg:pt-28">
           <div className="max-w-3xl">
             <p className="mb-6 text-xs font-bold tracking-[0.22em] text-[#5eead4] uppercase">Tecnologia com direção</p>
-            <h1 className="text-5xl font-semibold leading-[.96] tracking-[-0.065em] sm:text-7xl lg:text-[5.5rem]">Transformamos complexidade em <span className="text-[#5eead4]">movimento.</span></h1>
+            <h1 className="hero-title text-5xl font-semibold leading-[.96] tracking-[-0.065em] sm:text-7xl lg:text-[5.5rem]">
+              <span className="hero-brand">SamJoE <em>Tech &amp; Consulting</em></span>
+              <span className="hero-manifesto">Transformamos complexidade em <em>movimento.</em></span>
+            </h1>
             <p className="mt-8 max-w-xl text-lg leading-relaxed text-[#b7cfdb] sm:text-xl">A SamJoE combina visão de negócio, estratégia e execução tecnológica para construir o próximo passo da sua empresa.</p>
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <a href="#atuação" className="inline-flex items-center gap-2 rounded-full bg-[#38d9a9] px-6 py-3.5 text-sm font-bold text-[#07111d] transition hover:bg-[#7ff0ca]">Conheça nossa atuação <MoveRight className="size-4" /></a>

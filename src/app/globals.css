@@ -139,7 +139,8 @@ body > * {
 .hero-video {
   filter: saturate(0.72) contrast(1.05) brightness(0.72);
   mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 100%);
-  transition: opacity 80ms linear;
+  opacity: 0;
+  transition: opacity 520ms ease-out;
 }
 
 .hero-content {
@@ -166,28 +167,60 @@ body > * {
 }
 
 .hero-content h1 {
-  max-width: 15ch;
-  overflow: visible;
+  position: relative;
+  display: grid;
+  width: 100%;
+  min-height: 2.7em;
   margin-inline: auto;
-  font-family: Iowan Old Style, Baskerville, Georgia, serif;
-  font-size: clamp(4.25rem, 10.5vw, 9.8rem) !important;
-  line-height: 0.88;
+  font-family: Bahnschrift, "Segoe UI Variable Display", "Arial Narrow", "Segoe UI", sans-serif;
+  font-weight: 700;
+  line-height: 0.9;
   letter-spacing: -0.075em;
-  background: linear-gradient(110deg, #fff7eb 0%, #f4e1c7 36%, #d69a61 62%, #fff3e2 100%);
-  background-size: 220% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
   text-shadow: 0 0 2.5rem rgb(29 19 13 / 0.35);
-  animation: samjoe-title-arrival 1.15s cubic-bezier(0.16, 1, 0.3, 1) both, samjoe-title-sheen 7s ease-in-out 1.15s infinite alternate;
 }
 
-.hero-content h1 span {
-  background: linear-gradient(100deg, #d4884e 0%, #ffd1a0 46%, #e3a36b 100%);
-  background-size: 180% 100%;
+.hero-title > span {
+  grid-area: 1 / 1;
+  align-self: center;
+  justify-self: center;
+  max-width: 100%;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent !important;
+}
+
+.hero-brand {
+  font-size: clamp(3.2rem, 8.2vw, 7.8rem);
+  background: linear-gradient(110deg, #fff7eb 0%, #f4e1c7 48%, #d69a61 100%);
+  background-size: 220% 100%;
+  animation: samjoe-brand-arrival 5.1s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.hero-brand em {
+  display: block;
+  margin-top: 0.18em;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.18em;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.hero-manifesto {
+  max-width: 14.5ch;
+  font-size: clamp(2.6rem, 8.2vw, 8rem);
+  background: linear-gradient(104deg, #fff7eb 0%, #f4e1c7 34%, #d69a61 63%, #fff3e2 100%);
+  background-size: 220% 100%;
+  animation: samjoe-manifesto-arrival 1.2s cubic-bezier(0.16, 1, 0.3, 1) 4.2s both, samjoe-title-sheen 7s ease-in-out 5.4s infinite alternate;
+}
+
+.hero-manifesto em {
+  font-style: normal;
+  background: linear-gradient(100deg, #d4884e 0%, #ffd1a0 46%, #e3a36b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .hero-content > div:first-child > p:first-child {
@@ -199,8 +232,14 @@ body > * {
   animation: samjoe-eyebrow-arrival 0.75s ease-out 0.62s both;
 }
 
-@keyframes samjoe-title-arrival {
-  from { opacity: 0; filter: blur(14px); transform: translateY(0.38em) scale(0.94); }
+@keyframes samjoe-brand-arrival {
+  0% { opacity: 0; filter: blur(16px); transform: translateY(0.3em) scale(0.94); }
+  18%, 76% { opacity: 1; filter: blur(0); transform: translateY(0) scale(1); }
+  100% { opacity: 0; filter: blur(12px); transform: translateY(-0.22em) scale(1.03); }
+}
+
+@keyframes samjoe-manifesto-arrival {
+  from { opacity: 0; filter: blur(14px); transform: translateY(0.32em) scale(0.95); }
   to { opacity: 1; filter: blur(0); transform: translateY(0) scale(1); }
 }
 
@@ -212,6 +251,10 @@ body > * {
 @keyframes samjoe-eyebrow-arrival {
   from { opacity: 0; transform: translateY(1rem); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+.samjoe-site :is(h1, h2, h3) {
+  font-family: Bahnschrift, "Segoe UI Variable Display", "Arial Narrow", "Segoe UI", sans-serif;
 }
 
 .hero-motion-panel {
@@ -234,5 +277,26 @@ body > * {
 
 @media (prefers-reduced-motion: reduce) {
   body::before,
-  body::after { animation: none; }
+  body::after,
+  .hero-brand,
+  .hero-manifesto { animation: none; }
+
+  .hero-brand { display: none; }
+}
+
+@media (max-width: 640px) {
+  .hero-content {
+    min-height: calc(100svh - 4rem);
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  .hero-content h1 {
+    min-height: 3.8em;
+    letter-spacing: -0.06em;
+  }
+
+  .hero-brand { font-size: clamp(2.8rem, 14vw, 4rem); }
+  .hero-manifesto { max-width: 13.5ch; font-size: clamp(2.6rem, 12vw, 3.8rem); }
+  .hero-video { object-position: 58% center; }
 }

@@ -12,6 +12,7 @@ export function ScrollPresence() {
     const elements = Array.from(document.querySelectorAll<HTMLElement>(".samjoe-site section > div:not(.absolute)"));
     const hero = document.querySelector<HTMLElement>(".samjoe-site > section:first-child");
     const heroVideo = document.querySelector<HTMLVideoElement>(".hero-video");
+    let heroVideoReady = heroVideo?.readyState !== undefined && heroVideo.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA;
     let animationFrame = 0;
 
     const update = () => {
@@ -25,7 +26,8 @@ export function ScrollPresence() {
         const visibility = Math.min(entering, leaving);
         const direction = bounds.top > 0 ? 1 : -1;
 
-        element.style.opacity = String(visibility);
+        const shouldWaitForVideo = element.classList.contains("hero-content") && !heroVideoReady;
+        element.style.opacity = String(shouldWaitForVideo ? 0 : visibility);
         element.style.filter = `blur(${(1 - visibility) * 5}px)`;
         element.style.transform = `translateY(${direction * (1 - visibility) * 32}px)`;
       });
@@ -33,7 +35,8 @@ export function ScrollPresence() {
       if (hero && heroVideo) {
         const heroBounds = hero.getBoundingClientRect();
         const heroProgress = clamp(-heroBounds.top / (heroBounds.height * 0.72));
-        heroVideo.style.opacity = String(0.86 * (1 - heroProgress));
+        const baseOpacity = window.matchMedia("(max-width: 640px)").matches ? 0.56 : 0.86;
+        heroVideo.style.opacity = String(heroVideoReady ? baseOpacity * (1 - heroProgress) : 0);
       }
     };
 
@@ -44,11 +47,17 @@ export function ScrollPresence() {
     update();
     window.addEventListener("scroll", scheduleUpdate, { passive: true });
     window.addEventListener("resize", scheduleUpdate);
+    const revealHero = () => {
+      heroVideoReady = true;
+      scheduleUpdate();
+    };
+    heroVideo?.addEventListener("loadeddata", revealHero, { once: true });
 
     return () => {
       window.cancelAnimationFrame(animationFrame);
       window.removeEventListener("scroll", scheduleUpdate);
       window.removeEventListener("resize", scheduleUpdate);
+      heroVideo?.removeEventListener("loadeddata", revealHero);
     };
   }, [pathname]);
 
