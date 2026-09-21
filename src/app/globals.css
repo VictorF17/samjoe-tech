@@ -36,3 +36,22 @@ body { margin: 0; background: var(--background); color: var(--foreground); }
 .samjoe-site [class*="border-[#5eead4]"], .samjoe-site [class*="border-[#74b3d0]"] { border-color: rgb(230 180 126 / 0.42) !important; }
 .samjoe-site svg path { stroke: #d49b6a !important; }
 .samjoe-site svg circle { fill: #c88954 !important; }
+
+/* Continuous tonal transitions between the page sections. */
+.samjoe-site > section:nth-of-type(2) {
+  background: linear-gradient(180deg, #211b17 0%, #29231f 18%, #302822 72%, #27211d 100%) !important;
+  border-color: transparent !important;
+}
+
+.samjoe-site > section:nth-of-type(3) {
+  background: radial-gradient(ellipse at 78% 12%, rgb(200 137 84 / 0.1), transparent 33%), linear-gradient(180deg, #27211d 0%, #211b17 44%, #29231f 100%);
+}
+
+.samjoe-site > section:nth-of-type(4) {
+  background: linear-gradient(180deg, #29231f 0%, #221c18 66%, #211b17 100%);
+}
+
+.samjoe-site > footer {
+  background: linear-gradient(180deg, #211b17, #181514);
+  border-color: transparent !important;
+}
