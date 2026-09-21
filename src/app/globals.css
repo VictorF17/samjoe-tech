@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+:root { --background: #211b17; --foreground: #f4eee7; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--background); color: var(--foreground); }
+::selection { background: #c88954; color: #211b17; }
+
+/* SamJoE: espresso, graphite, cream and roasted-caramel accents. */
+.samjoe-site > section:first-child > div:first-child {
+  background: radial-gradient(circle at 82% 8%, #563527 0, transparent 28%), radial-gradient(circle at 12% 74%, #3a312c 0, transparent 34%), linear-gradient(125deg, #211b17 0%, #2a2521 55%, #181514 100%) !important;
+}
+
+.samjoe-site > section:first-child > div:nth-of-type(2),
+.samjoe-site > section:first-child > div:nth-of-type(3) {
+  display: none;
+}
+
+.samjoe-site [class*="bg-[#07111d]"] { background-color: #211b17 !important; }
+.samjoe-site [class*="bg-[#091825]"] { background-color: #29231f !important; }
+.samjoe-site [class*="bg-[#0a1b2a]"] { background-color: #2c2622 !important; }
+.samjoe-site [class*="bg-[#0d2435]"] { background-color: #39312c !important; }
+.samjoe-site [class*="bg-[#10273a]"] { background-color: #39312c !important; }
+.samjoe-site [class*="bg-[#38d9a9]"] { background-color: #c88954 !important; }
+.samjoe-site [class*="hover:bg-[#7ff0ca]"]:hover { background-color: #e6b47e !important; }
+.samjoe-site [class*="hover:bg-[#5eead4]"]:hover { background-color: #e6b47e !important; }
+.samjoe-site [class*="hover:bg-[#0d2131]"]:hover { background-color: #37302b !important; }
+
+.samjoe-site [class*="text-[#eef7ff]"], .samjoe-site [class*="text-[#dffef5]"], .samjoe-site [class*="text-[#e8fff8]"] { color: #f4eee7 !important; }
+.samjoe-site [class*="text-[#5eead4]"] { color: #e6b47e !important; }
+.samjoe-site [class*="text-[#83c7e4]"], .samjoe-site [class*="text-[#8bc7e0]"] { color: #d7c9bf !important; }
+.samjoe-site [class*="text-[#8fb5c7]"], .samjoe-site [class*="text-[#9cb9c8]"], .samjoe-site [class*="text-[#b7cfdb]"] { color: #cbb9ab !important; }
+.samjoe-site [class*="text-[#7898aa]"] { color: #a99c93 !important; }
+.samjoe-site [class*="text-[#07111d]"] { color: #211b17 !important; }
+
+.samjoe-site [class*="border-[#5eead4]"], .samjoe-site [class*="border-[#74b3d0]"] { border-color: rgb(230 180 126 / 0.42) !important; }
+.samjoe-site svg path { stroke: #d49b6a !important; }
+.samjoe-site svg circle { fill: #c88954 !important; }
