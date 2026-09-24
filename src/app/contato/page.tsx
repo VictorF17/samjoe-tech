@@ -26,8 +26,7 @@ export default function ContactPage() {
     <main className="samjoe-site min-h-screen px-5 py-5 text-[#eef7ff] sm:px-10 lg:px-16">
       <header className="mx-auto flex max-w-6xl items-center justify-between py-3">
         <a href="/" className="flex items-center gap-2.5" aria-label="Voltar para o início">
-          <span className="grid size-9 place-items-center rounded-lg bg-[#38d9a9] text-sm font-black text-[#07111d]">S</span>
-          <span className="leading-none"><strong className="block text-base tracking-tight">SamJoE</strong><small className="text-[0.58rem] font-bold tracking-[0.19em] text-[#8fb5c7] uppercase">Tech & Consulting</small></span>
+          <span className="brand-logo" aria-hidden="true" />
         </a>
         <a href="/" className="inline-flex items-center gap-2 text-xs font-bold text-[#cbb9ab] transition hover:text-[#e6b47e]"><ArrowLeft className="size-4" /> Início</a>
       </header>

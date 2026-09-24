@@ -1,10 +1,20 @@
 @import "tailwindcss";
 
-:root { --background: #211b17; --foreground: #f4eee7; }
+:root {
+  --sj-graphite: #111820;
+  --sj-graphite-secondary: #283039;
+  --sj-bronze: #9A6848;
+  --sj-bronze-hover: #B98562;
+  --sj-off-white: #F7F4F0;
+  --sj-white: #FFFFFF;
+  --sj-muted: color-mix(in srgb, var(--sj-off-white) 68%, var(--sj-graphite-secondary));
+  --background: var(--sj-graphite);
+  --foreground: var(--sj-off-white);
+}
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { margin: 0; background: var(--background); color: var(--foreground); }
-::selection { background: #c88954; color: #211b17; }
+::selection { background: var(--sj-bronze); color: var(--sj-white); }
 
 /* SamJoE: espresso, graphite, cream and roasted-caramel accents. */
 .samjoe-site > section:first-child > div:first-child { background: transparent !important; }
@@ -14,31 +24,24 @@ body { margin: 0; background: var(--background); color: var(--foreground); }
   display: none;
 }
 
-.samjoe-site [class*="bg-[#07111d]"] { background-color: #211b17 !important; }
-.samjoe-site [class*="bg-[#091825]"] { background-color: #29231f !important; }
-.samjoe-site [class*="bg-[#0a1b2a]"] { background-color: #2c2622 !important; }
-.samjoe-site [class*="bg-[#0d2435]"] { background-color: #39312c !important; }
-.samjoe-site [class*="bg-[#10273a]"] { background-color: #39312c !important; }
-.samjoe-site [class*="bg-[#38d9a9]"] { background-color: #c88954 !important; }
-.samjoe-site [class*="hover:bg-[#7ff0ca]"]:hover { background-color: #e6b47e !important; }
-.samjoe-site [class*="hover:bg-[#5eead4]"]:hover { background-color: #e6b47e !important; }
-.samjoe-site [class*="hover:bg-[#0d2131]"]:hover { background-color: #37302b !important; }
+.samjoe-site [class*="bg-[#07111d]"] { background-color: var(--sj-graphite) !important; }
+.samjoe-site [class*="bg-[#091825]"], .samjoe-site [class*="bg-[#0a1b2a]"], .samjoe-site [class*="bg-[#0d2435]"], .samjoe-site [class*="bg-[#10273a]"] { background-color: var(--sj-graphite-secondary) !important; }
+.samjoe-site [class*="bg-[#38d9a9]"] { background-color: var(--sj-bronze) !important; }
+.samjoe-site [class*="hover:bg-[#7ff0ca]"]:hover, .samjoe-site [class*="hover:bg-[#5eead4]"]:hover { background-color: var(--sj-bronze-hover) !important; }
+.samjoe-site [class*="hover:bg-[#0d2131]"]:hover { background-color: var(--sj-graphite-secondary) !important; }
 
-.samjoe-site [class*="text-[#eef7ff]"], .samjoe-site [class*="text-[#dffef5]"], .samjoe-site [class*="text-[#e8fff8]"] { color: #f4eee7 !important; }
-.samjoe-site [class*="text-[#5eead4]"] { color: #e6b47e !important; }
-.samjoe-site [class*="text-[#83c7e4]"], .samjoe-site [class*="text-[#8bc7e0]"] { color: #d7c9bf !important; }
-.samjoe-site [class*="text-[#8fb5c7]"], .samjoe-site [class*="text-[#9cb9c8]"], .samjoe-site [class*="text-[#b7cfdb]"] { color: #cbb9ab !important; }
-.samjoe-site [class*="text-[#7898aa]"] { color: #a99c93 !important; }
-.samjoe-site [class*="text-[#07111d]"] { color: #211b17 !important; }
+.samjoe-site [class*="text-[#eef7ff]"], .samjoe-site [class*="text-[#dffef5]"], .samjoe-site [class*="text-[#e8fff8]"], .samjoe-site [class*="text-[#07111d]"] { color: var(--sj-off-white) !important; }
+.samjoe-site [class*="text-[#5eead4]"] { color: var(--sj-bronze) !important; }
+.samjoe-site [class*="text-[#83c7e4]"], .samjoe-site [class*="text-[#8bc7e0]"], .samjoe-site [class*="text-[#8fb5c7]"], .samjoe-site [class*="text-[#9cb9c8]"], .samjoe-site [class*="text-[#b7cfdb]"], .samjoe-site [class*="text-[#7898aa]"] { color: var(--sj-muted) !important; }
 
-.samjoe-site [class*="border-[#5eead4]"], .samjoe-site [class*="border-[#74b3d0]"] { border-color: rgb(230 180 126 / 0.42) !important; }
-.samjoe-site svg path { stroke: #d49b6a !important; }
-.samjoe-site svg circle { fill: #c88954 !important; }
+.samjoe-site [class*="border-[#5eead4]"], .samjoe-site [class*="border-[#74b3d0]"] { border-color: color-mix(in srgb, var(--sj-bronze) 48%, transparent) !important; }
+.samjoe-site svg path { stroke: var(--sj-bronze) !important; }
+.samjoe-site svg circle { fill: var(--sj-bronze) !important; }
 
 /* A single continuous coffee-tone background that shifts with the scroll. */
 body {
-  background-color: #241d18;
-  background-image: linear-gradient(180deg, #211b17 0%, #28201b 27%, #2d251f 50%, #28201b 74%, #211b17 100%);
+  background-color: var(--sj-graphite);
+  background-image: linear-gradient(180deg, var(--sj-graphite) 0%, color-mix(in srgb, var(--sj-graphite-secondary) 34%, var(--sj-graphite)) 27%, var(--sj-graphite) 50%, color-mix(in srgb, var(--sj-graphite-secondary) 34%, var(--sj-graphite)) 74%, var(--sj-graphite) 100%);
   background-attachment: scroll;
   background-size: 100% 100%;
 }
@@ -55,7 +58,7 @@ body {
 .samjoe-site [class*="bg-[#0d2435]"],
 .samjoe-site [class*="bg-[#10273a]"],
 .samjoe-site [class*="bg-[#38d9a9]"] {
-  background-color: rgb(36 29 24 / 0.42) !important;
+  background-color: color-mix(in srgb, var(--sj-graphite-secondary) 58%, transparent) !important;
 }
 
 .samjoe-site > section,
@@ -67,7 +70,7 @@ body {
 
 /* A fixed canvas behind all content: no section paints its own background. */
 body {
-  background: #211b17;
+  background: var(--sj-graphite);
 }
 
 body::before {
@@ -75,7 +78,7 @@ body::before {
   inset: 0;
   z-index: 0;
   content: "";
-  background: radial-gradient(ellipse 66% 48% at 80% 5%, rgb(86 53 39 / 0.9) 0%, rgb(61 40 31 / 0.58) 34%, transparent 72%), radial-gradient(ellipse 58% 44% at 12% 88%, rgb(58 49 44 / 0.54) 0%, transparent 70%), linear-gradient(160deg, #211b17 0%, #2b211c 43%, #29201c 66%, #211b17 100%);
+  background: radial-gradient(ellipse 66% 48% at 80% 5%, color-mix(in srgb, var(--sj-bronze) 12%, transparent) 0%, transparent 66%), radial-gradient(ellipse 58% 44% at 12% 88%, color-mix(in srgb, var(--sj-graphite-secondary) 32%, transparent) 0%, transparent 70%), linear-gradient(160deg, var(--sj-graphite) 0%, color-mix(in srgb, var(--sj-graphite-secondary) 32%, var(--sj-graphite)) 43%, var(--sj-graphite) 66%, color-mix(in srgb, var(--sj-graphite-secondary) 24%, var(--sj-graphite)) 100%);
   background-size: 142% 128%, 128% 134%, 100% 180%;
   background-position: 78% 2%, 10% 92%, 50% 0%;
   animation: samjoe-canvas-drift linear both;
@@ -93,10 +96,10 @@ body::after {
   content: "";
   pointer-events: none;
   border-radius: 38% 62% 54% 46% / 52% 42% 58% 48%;
-  background: linear-gradient(115deg, rgb(133 76 43 / 0.03), rgb(236 170 97 / 0.54), rgb(111 70 48 / 0.08));
-  box-shadow: 0 0 6rem 2.5rem rgb(205 132 72 / 0.16), inset 0 0 3rem rgb(255 228 184 / 0.2);
+  background: linear-gradient(115deg, transparent, color-mix(in srgb, var(--sj-bronze) 14%, transparent), transparent);
+  box-shadow: 0 0 6rem 2.5rem color-mix(in srgb, var(--sj-bronze) 7%, transparent), inset 0 0 3rem color-mix(in srgb, var(--sj-bronze-hover) 8%, transparent);
   filter: blur(62px);
-  opacity: 0.84;
+  opacity: 0.34;
   transform: rotate(-12deg);
   animation: samjoe-undercurrent linear both;
   animation-timeline: scroll(root);
@@ -116,20 +119,33 @@ body > * {
 }
 
 .samjoe-site a[class*="rounded-full"] {
-  background: #c88954 !important;
-  color: #211b17 !important;
+  background: var(--sj-bronze) !important;
+  color: var(--sj-white) !important;
 }
 
-.samjoe-site header > a > span:first-child {
-  background: #c88954 !important;
+.samjoe-site a[class*="rounded-full"]:hover {
+  background: var(--sj-bronze-hover) !important;
+}
+
+.samjoe-site header > a > span:first-child:not(.brand-logo) {
+  background: var(--sj-bronze) !important;
+}
+
+.samjoe-site header > a > .brand-logo {
+  display: block;
+  width: clamp(12rem, 21vw, 15rem);
+  height: 3.45rem;
+  background: linear-gradient(135deg, var(--sj-bronze-hover), var(--sj-bronze) 58%, color-mix(in srgb, var(--sj-bronze) 68%, var(--sj-graphite)));
+  -webkit-mask: url("/brand/samjoe-logo.png") center / contain no-repeat;
+  mask: url("/brand/samjoe-logo.png") center / contain no-repeat;
 }
 
 .samjoe-site [class*="text-[#07111d]"] {
-  color: #f4eee7 !important;
+  color: var(--sj-off-white) !important;
 }
 
 .samjoe-site a[class*="rounded-full"][class*="text-[#07111d]"] {
-  color: #211b17 !important;
+  color: var(--sj-white) !important;
 }
 
 .motion-video + .relative {
@@ -137,7 +153,7 @@ body > * {
 }
 
 .hero-video {
-  filter: saturate(0.72) contrast(1.05) brightness(0.72);
+  filter: saturate(0.48) contrast(1.04) brightness(0.68);
   mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 100%);
   opacity: 0;
   transition: opacity 520ms ease-out;
@@ -176,7 +192,7 @@ body > * {
   font-weight: 700;
   line-height: 0.9;
   letter-spacing: -0.075em;
-  text-shadow: 0 0 2.5rem rgb(29 19 13 / 0.35);
+  text-shadow: 0 0 2.5rem color-mix(in srgb, var(--sj-graphite) 78%, transparent);
 }
 
 .hero-title > span {
@@ -191,7 +207,7 @@ body > * {
 
 .hero-brand {
   font-size: clamp(3.2rem, 8.2vw, 7.8rem);
-  background: linear-gradient(110deg, #fff7eb 0%, #f4e1c7 48%, #d69a61 100%);
+  background: linear-gradient(110deg, var(--sj-white) 0%, var(--sj-off-white) 48%, var(--sj-bronze-hover) 100%);
   background-size: 220% 100%;
   animation: samjoe-brand-arrival 5.1s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
@@ -210,14 +226,14 @@ body > * {
 .hero-manifesto {
   max-width: 14.5ch;
   font-size: clamp(2.6rem, 8.2vw, 8rem);
-  background: linear-gradient(104deg, #fff7eb 0%, #f4e1c7 34%, #d69a61 63%, #fff3e2 100%);
+  background: linear-gradient(104deg, var(--sj-white) 0%, var(--sj-off-white) 34%, var(--sj-bronze-hover) 63%, var(--sj-white) 100%);
   background-size: 220% 100%;
   animation: samjoe-manifesto-arrival 1.2s cubic-bezier(0.16, 1, 0.3, 1) 4.2s both, samjoe-title-sheen 7s ease-in-out 5.4s infinite alternate;
 }
 
 .hero-manifesto em {
   font-style: normal;
-  background: linear-gradient(100deg, #d4884e 0%, #ffd1a0 46%, #e3a36b 100%);
+  background: linear-gradient(100deg, var(--sj-bronze) 0%, var(--sj-bronze-hover) 46%, var(--sj-bronze) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -261,6 +277,62 @@ body > * {
   display: none;
 }
 
+.client-mark {
+  display: flex;
+  min-height: 4.5rem;
+  align-items: center;
+  justify-content: center;
+  color: var(--sj-off-white);
+  opacity: 0.78;
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.client-mark:hover {
+  opacity: 1;
+  transform: translateY(-0.18rem);
+}
+
+.client-mark-expatri img {
+  width: min(100%, 12.5rem);
+  height: auto;
+}
+
+.client-mark-magno,
+.client-mark-loe {
+  flex-direction: column;
+  gap: 0.15rem;
+  line-height: 1;
+}
+
+.client-mark-magno strong {
+  font-family: Bahnschrift, "Segoe UI Variable Display", sans-serif;
+  font-size: 1.55rem;
+  letter-spacing: 0.15em;
+}
+
+.client-mark-magno span {
+  color: var(--sj-bronze-hover);
+  font-size: 0.54rem;
+  font-weight: 700;
+  letter-spacing: 0.31em;
+}
+
+.client-mark-loe strong {
+  color: var(--sj-bronze-hover);
+  font-family: Georgia, serif;
+  font-size: 2.55rem;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.12em;
+}
+
+.client-mark-loe span {
+  color: var(--sj-off-white);
+  font-size: 0.56rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+}
+
 @keyframes samjoe-canvas-drift {
   from { background-position: 78% 2%, 10% 92%, 50% 0%; filter: brightness(0.9); }
   55% { background-position: 52% 44%, 30% 58%, 50% 54%; filter: brightness(1.12); }
@@ -269,8 +341,8 @@ body > * {
 
 @keyframes samjoe-undercurrent {
   from { transform: translate3d(0, 0, 0) rotate(-12deg) scale(0.86); opacity: 0.12; }
-  35% { opacity: 0.78; }
-  64% { transform: translate3d(56vw, -53vh, 0) rotate(5deg) scale(1.22); opacity: 0.88; }
+  35% { opacity: 0.26; }
+  64% { transform: translate3d(56vw, -53vh, 0) rotate(5deg) scale(1.22); opacity: 0.36; }
   to { transform: translate3d(106vw, -116vh, 0) rotate(13deg) scale(1.08); opacity: 0.1; }
 }
 

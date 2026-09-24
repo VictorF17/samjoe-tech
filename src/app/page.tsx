@@ -4,20 +4,20 @@ const services = [
   {
     number: "01",
     icon: Lightbulb,
-    title: "Estratégia digital",
-    text: "Clareza para decidir onde investir, o que priorizar e como transformar tecnologia em vantagem competitiva.",
+    title: "Sites que posicionam",
+    text: "Presença digital premium, clara e orientada a transformar atenção em oportunidades de negócio.",
   },
   {
     number: "02",
     icon: Code2,
-    title: "Produtos e plataformas",
-    text: "Experiências digitais úteis, sustentáveis e feitas para acompanhar o ritmo do seu negócio.",
+    title: "CRM",
+    text: "Sua operação organizada em um só lugar: clientes, processos, documentos e relacionamento.",
   },
   {
     number: "03",
     icon: Layers3,
-    title: "Processos que escalam",
-    text: "Automação, integrações e fluxos mais inteligentes para reduzir atrito e liberar o seu time.",
+    title: "Automações sob medida",
+    text: "Fluxos e integrações que eliminam tarefas repetitivas e devolvem tempo ao seu time.",
   },
 ];
 
@@ -37,8 +37,7 @@ export default function HomePage() {
         </video>
         <header className="mx-auto flex max-w-7xl items-center justify-between border-b border-white/10 pb-5">
           <a href="#início" className="flex items-center gap-2.5" aria-label="SamJoE Tech & Consulting — início">
-            <span className="grid size-9 place-items-center rounded-lg bg-[#38d9a9] text-sm font-black text-[#07111d]">S</span>
-            <span className="leading-none"><strong className="block text-base tracking-tight">SamJoE</strong><small className="text-[0.58rem] font-bold tracking-[0.19em] text-[#8fb5c7] uppercase">Tech & Consulting</small></span>
+            <span className="brand-logo" aria-hidden="true" />
           </a>
           <nav className="hidden items-center gap-7 text-sm text-[#b7cfdb] md:flex">
             <a href="#atuação" className="transition hover:text-[#5eead4]">Atuação</a>
@@ -85,13 +84,26 @@ export default function HomePage() {
 
       <section id="atuação" className="border-y border-white/8 bg-[#091825] px-5 py-20 sm:px-10 lg:px-16 lg:py-28">
         <div className="mx-auto max-w-7xl"><div className="max-w-2xl"><p className="text-xs font-bold tracking-[.22em] text-[#5eead4] uppercase">Onde criamos valor</p><h2 className="mt-5 text-4xl font-semibold leading-tight tracking-[-.05em] sm:text-5xl">Tecnologia deve abrir caminhos, não criar mais obstáculos.</h2></div>
-          <div className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 md:grid-cols-3">{services.map(({ number, icon: Icon, title, text }) => <article key={number} className="bg-[#091825] p-7 transition hover:bg-[#0d2131] sm:p-8"><span className="text-xs font-bold tracking-[.18em] text-[#5eead4]">{number}</span><Icon className="mt-12 size-6 text-[#83c7e4]" strokeWidth={1.5} /><h3 className="mt-6 text-2xl font-semibold tracking-[-.04em]">{title}</h3><p className="mt-4 leading-relaxed text-[#9cb9c8]">{text}</p></article>)}</div>
+          <div className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 md:grid-cols-3">{services.map(({ number, icon: Icon, title, text }) => <article key={number} className="bg-[#091825] p-7 transition hover:bg-[#0d2131] sm:p-8"><Icon className="mt-2 size-6 text-[#83c7e4]" strokeWidth={1.5} /><h3 className="mt-6 text-2xl font-semibold tracking-[-.04em]">{title}</h3><p className="mt-4 leading-relaxed text-[#9cb9c8]">{text}</p></article>)}</div>
         </div>
       </section>
 
       <section id="método" className="px-5 py-20 sm:px-10 lg:px-16 lg:py-28"><div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[.8fr_1.2fr] lg:items-center"><div><p className="text-xs font-bold tracking-[.22em] text-[#5eead4] uppercase">O jeito SamJoE</p><h2 className="mt-5 text-4xl font-semibold tracking-[-.05em] sm:text-5xl">Menos ruído. Mais avanço.</h2></div><div className="grid gap-4"><p className="text-xl leading-relaxed text-[#b7cfdb] sm:text-2xl">Uma boa consultoria não entrega apenas uma solução. Ela deixa a empresa mais preparada para escolher, adaptar e seguir em frente.</p><div className="mt-4 grid gap-3 sm:grid-cols-3">{principles.map((principle) => <div key={principle} className="rounded-xl border border-white/10 bg-white/4 p-4 text-sm text-[#d6e7ee]"><Check className="mb-5 size-4 text-[#5eead4]" />{principle}</div>)}</div></div></div></section>
 
       <section id="contato" className="px-5 pb-20 sm:px-10 lg:px-16 lg:pb-28"><div className="mx-auto flex max-w-7xl flex-col justify-between gap-10 rounded-3xl bg-[#38d9a9] px-7 py-12 text-[#07111d] sm:px-12 lg:flex-row lg:items-end lg:px-16 lg:py-16"><div className="max-w-2xl"><p className="text-xs font-black tracking-[.2em] uppercase opacity-65">Vamos construir o próximo passo?</p><h2 className="mt-5 text-4xl font-semibold leading-tight tracking-[-.05em] sm:text-5xl">Toda transformação começa com uma conversa bem feita.</h2></div><a href="#início" className="inline-flex w-fit items-center gap-3 rounded-full bg-[#07111d] px-6 py-3.5 text-sm font-bold text-[#e8fff8] transition hover:bg-[#10273a]">Iniciar conversa <ArrowUpRight className="size-4" /></a></div></section>
+
+      <section className="client-strip px-5 pb-20 sm:px-10 lg:px-16 lg:pb-28" aria-labelledby="clientes-title">
+        <div className="mx-auto max-w-7xl border-y border-white/10 py-10 sm:py-12">
+          <p id="clientes-title" className="text-center text-xs font-bold tracking-[.22em] text-[#5eead4] uppercase">Empresas que já estão em movimento</p>
+          <div className="mt-9 grid items-center gap-8 sm:grid-cols-3 sm:gap-5">
+            <div className="client-mark client-mark-expatri">
+              <img src="/clients/expatritax/logo-horizontal-negative.png" alt="ExpatriTax Brasil" />
+            </div>
+            <div className="client-mark client-mark-magno" aria-label="Magno Advogados"><strong>MAGNO</strong><span>ADVOGADOS</span></div>
+            <div className="client-mark client-mark-loe" aria-label="Loê Clinic"><strong>Loê</strong><span>CLINIC</span></div>
+          </div>
+        </div>
+      </section>
 
       <footer className="border-t border-white/8 px-5 py-7 text-center text-xs font-bold tracking-[.15em] text-[#7898aa] uppercase">SamJoE Tech & Consulting · Tecnologia com direção</footer>
     </main>
