@@ -118,6 +118,30 @@ body > * {
   background-image: none !important;
 }
 
+.samjoe-site [class*="bg-[#091825]"],
+.samjoe-site [class*="bg-[#0a1b2a]"],
+.samjoe-site [class*="bg-[#0d2435]"],
+.samjoe-site [class*="bg-[#10273a]"] {
+  background-color: color-mix(in srgb, var(--sj-graphite-secondary) 58%, transparent) !important;
+}
+
+.samjoe-site [class*="bg-[#38d9a9]"] {
+  background-color: var(--sj-bronze) !important;
+}
+
+.samjoe-site [class*="bg-[#38d9a9]"] a[class*="rounded-full"] {
+  background: var(--sj-graphite) !important;
+  color: var(--sj-off-white) !important;
+}
+
+.samjoe-site [class*="bg-[#38d9a9]"] a[class*="rounded-full"]:hover {
+  background: var(--sj-graphite-secondary) !important;
+}
+
+.samjoe-site [class*="bg-white/10"] {
+  background-color: color-mix(in srgb, var(--sj-off-white) 10%, transparent) !important;
+}
+
 .samjoe-site a[class*="rounded-full"] {
   background: var(--sj-bronze) !important;
   color: var(--sj-white) !important;
@@ -293,8 +317,9 @@ body > * {
 }
 
 .client-mark-expatri img {
-  width: min(100%, 12.5rem);
-  height: auto;
+  width: auto;
+  height: 2.35rem;
+  max-width: 100%;
 }
 
 .client-mark-magno,
@@ -331,6 +356,43 @@ body > * {
   font-size: 0.56rem;
   font-weight: 700;
   letter-spacing: 0.28em;
+}
+
+.showcase-marquee {
+  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+
+.showcase-marquee-track {
+  animation: showcase-scroll 105s linear infinite;
+  will-change: transform;
+}
+
+.showcase-tile {
+  background: #0b1420;
+  transition: transform 420ms ease, border-color 420ms ease;
+}
+
+.showcase-tile-body {
+  background: #0e1c2b;
+}
+
+.chrome-dot-red { background: #ff5f57; }
+.chrome-dot-yellow { background: #febc2e; }
+.chrome-dot-green { background: #28c840; }
+
+.showcase-tile:hover {
+  transform: translateY(-0.3rem);
+  border-color: color-mix(in srgb, var(--sj-bronze) 55%, transparent);
+}
+
+@keyframes showcase-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .showcase-marquee-track { animation: none; }
 }
 
 @keyframes samjoe-canvas-drift {

@@ -1,4 +1,4 @@
-import { ArrowLeft, ArrowUpRight, AtSign, BriefcaseBusiness, MessageCircle } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Mail, MessageCircle } from "lucide-react";
 
 const channels = [
   {
@@ -8,16 +8,10 @@ const channels = [
     href: "https://wa.me/5511972999157",
   },
   {
-    icon: AtSign,
-    label: "Instagram",
-    detail: "@victorfilipeconceicao",
-    href: "https://instagram.com/victorfilipeconceicao",
-  },
-  {
-    icon: BriefcaseBusiness,
-    label: "LinkedIn",
-    detail: "Victor Filipe Conceição",
-    href: "https://www.linkedin.com/in/victorfilipeconceicao/",
+    icon: Mail,
+    label: "E-mail",
+    detail: "victor.conceicao@samjoe.com.br",
+    href: "mailto:victor.conceicao@samjoe.com.br",
   },
 ];
 
@@ -36,7 +30,7 @@ export default function ContactPage() {
         <h1 className="mt-5 max-w-3xl text-5xl font-semibold leading-[.96] tracking-[-0.065em] sm:text-7xl">Vamos começar por uma <span className="text-[#e6b47e]">boa conversa.</span></h1>
         <p className="mt-8 max-w-2xl text-lg leading-relaxed text-[#d7c9bf] sm:text-xl">Escolha o canal que faz mais sentido para você. Estou por perto para trocar ideias, investigar possibilidades e construir o próximo passo.</p>
 
-        <div className="mt-14 grid gap-4 md:grid-cols-3">
+        <div className="mt-14 grid gap-4 md:grid-cols-2">
           {channels.map(({ icon: Icon, label, detail, href }) => (
             <a key={label} href={href} target="_blank" rel="noreferrer" className="group rounded-3xl border border-[#f4eee7]/12 p-7 transition hover:border-[#e6b47e]/55 hover:bg-[#f4eee7]/4 sm:p-8">
               <Icon className="size-7 text-[#e6b47e]" strokeWidth={1.5} />
