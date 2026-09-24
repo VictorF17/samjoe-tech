@@ -9,6 +9,9 @@ export function ScrollPresence() {
   const pathname = usePathname();
 
   useEffect(() => {
+    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+    if (!location.hash) window.scrollTo(0, 0);
+
     const elements = Array.from(document.querySelectorAll<HTMLElement>(".samjoe-site section > div:not(.absolute)"));
     const hero = document.querySelector<HTMLElement>(".samjoe-site > section:first-child");
     const heroVideo = document.querySelector<HTMLVideoElement>(".hero-video");
